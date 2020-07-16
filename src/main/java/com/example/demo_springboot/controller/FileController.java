@@ -36,7 +36,9 @@ public class FileController {
     @ResponseBody
     public JsonData uoload(@RequestParam("head_img") MultipartFile file, HttpServletRequest request){
 
-        if(file.getSize() > 10240000){
+        if(file.isEmpty()){
+            return new JsonData(-1,"file is Empty");
+        }else if(file.getSize() > 10240000){
             return new JsonData(-1,"file too hurge");
         }
         //获取用户名
