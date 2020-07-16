@@ -1,0 +1,1 @@
+console.info("test2_JS")
