@@ -10,4 +10,4 @@ spring:
     static-locations: 'classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,classpath:/test/,file:${web.upload-path}'
       # 提示:如果我们显式地把自定义文件夹 和 默认的四个文件夹都写出来，那么都会有效(此时，优先级 从左至右 依次降低)
   web:
-    image-path: 'F:\ideaPeoject\hello-springboot\src\main\resources\static\images'
+    image-path: 'F:\ideaPeoject\hello-springboot\src\main\resources\static\images\'

@@ -11,10 +11,10 @@ import org.springframework.util.unit.DataSize;
 
 import javax.servlet.MultipartConfigElement;
 
-//@SpringBootApplication 一个顶下面三个
-@SpringBootConfiguration
-@EnableAutoConfiguration
-@Component
+@SpringBootApplication //一个顶下面三个
+//@SpringBootConfiguration
+//@EnableAutoConfiguration
+//@Component
 
 public class DemoSpringbootApplication {
 
