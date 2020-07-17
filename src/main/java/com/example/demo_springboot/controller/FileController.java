@@ -30,17 +30,17 @@ public class FileController {
 
     //文件目录
     //注意 : 结尾一定要加 "/" 要不然会导致上传后的文件路径不正确 导致异常错误!
-    private static final String filePath = "F:\\ideaPeoject\\hello-springboot\\src\\main\\resources\\static\\images\\";
-
+    //private static final String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\images\\";
+    private static final String filePath = "F:\\ideaPeoject\\hello-springboot\\src\\main\\resources\\static\\images";
     @RequestMapping("/upload")
     @ResponseBody
     public JsonData uoload(@RequestParam("head_img") MultipartFile file, HttpServletRequest request){
 
         if(file.isEmpty()){
             return new JsonData(-1,"file is Empty");
-        }else if(file.getSize() > 10240000){
+        }/*else if(file.getSize() > 10240000){
             return new JsonData(-1,"file too hurge");
-        }
+        }*/
         //获取用户名
         String name = request.getParameter("user_name");
         System.out.println("用户名 : " + name);
