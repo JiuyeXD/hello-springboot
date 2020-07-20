@@ -1,14 +1,14 @@
 package com.example.demo_springboot.controller;
 
 import com.example.demo_springboot.domain.JsonData;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.print.DocFlavor;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.util.UUID;
@@ -17,9 +17,10 @@ import java.util.UUID;
  * @author: Jiuye
  * @date: 2020-07-16 16:19
  * @package: com.example.demo_springboot.controller
- * @Description: 文件上传
+ * @Description: 头像文件上传
  */
 @Controller
+@PropertySource({"classpath:static/config/upload.properties"})
 
 public class FileController {
     //主页
@@ -27,14 +28,18 @@ public class FileController {
     public Object Index(){
         return "index";
     }
-
     //文件目录
     //注意 : 结尾一定要加 "/" 要不然会导致上传后的文件路径不正确 导致异常错误!
     //private static final String filePath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\images\\";
-    private static final String filePath = "F:\\ideaPeoject\\hello-springboot\\src\\main\\resources\\static\\images\\";
+    @Value("${web.file.path}")
+    private String filePath;
+
+
     @RequestMapping("/upload")
     @ResponseBody
     public JsonData uoload(@RequestParam("head_img") MultipartFile file, HttpServletRequest request){
+
+        System.out.println("配置注入打印 : " + filePath);
 
         if(file.isEmpty()){
             return new JsonData(-1,"file is Empty");
