@@ -15,13 +15,14 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 @PropertySource({"classpath:static/config/ServerSettings.properties"})
-@ConfigurationProperties
+//@ConfigurationProperties(prefix = "test")
+@ConfigurationProperties(prefix = "test")
 public class ServerSettings {
     //名称
-    @Value("${test.name}")
+    //@Value("${name}")
     private String name;
     //域名地址
-    @Value("${test.domain}")
+    //@Value("${domain}")
     private String domain;
 }
 

@@ -80,7 +80,9 @@ public class GetController {
         params.put("id",id);
         return params;
     }
-
+    /*
+     * 测试配置文件注入
+     * */
     @Autowired
     private ServerSettings serverSettings;
     @GetMapping("/v1/test_properties")
