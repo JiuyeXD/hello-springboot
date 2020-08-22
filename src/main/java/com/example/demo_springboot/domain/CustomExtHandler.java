@@ -41,7 +41,7 @@ public class CustomExtHandler {
 
         Map<String, Object> map = new HashMap<>();
         map.put("code",e.getCode());
-        map.put("msg",e.getMsg());
+        map.put("msg",e.getMsg()                );
         map.put("url",request.getRequestURL());
         return map;
     }

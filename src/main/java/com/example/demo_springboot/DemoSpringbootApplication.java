@@ -5,6 +5,7 @@ import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.util.unit.DataSize;
@@ -15,7 +16,7 @@ import javax.servlet.MultipartConfigElement;
 //@SpringBootConfiguration
 //@EnableAutoConfiguration
 //@Component
-
+@ServletComponentScan
 public class DemoSpringbootApplication {
 
     public static void main(String[] args) {
